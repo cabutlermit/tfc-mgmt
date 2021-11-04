@@ -2,21 +2,17 @@
 
 Manage GitHub repositories and Terraform Cloud workspaces.
 
+## STILL TO DO
+
+1. Need to setup the AWS access configuration for each workspace.
+2. Need to record the various architecture decisions that have already been made when designing this code!
+3. Need to handle the TfC and GH tokens in the module, not in the main code.
+
 ## Dependencies
 
 ### GitHub Template
 
-We make use of a template in GitHub for all of our Terraform code moving forward. The template includes the following.
-
-* a default `main` branch with simple branch protection (per the DevDocs)
-* an `main.tf` file
-* a `versions.tf` file with a simple block of code setting "~> 1.0" version constraint on Terraform
-* a `.gitignore` file from the GitHub Terraform template
-* a `variables.tf` file with four variable definitions
-  * `mitlib` ("The shortname name of our MITLibraries Organization")
-  * `ou` = ("The name of the AWS OU this repo is linked to")
-  * `name` = ("The name of the app/resource this repo builds")
-  * `environment` = ("The name of the environment/stage/workspace (e.g., `stage`, `prod`, `dev`)")
+We make use of a template in GitHub for all of our Terraform code moving forward.
 
 ### Terraform Cloud Workspace VCS Integration
 
